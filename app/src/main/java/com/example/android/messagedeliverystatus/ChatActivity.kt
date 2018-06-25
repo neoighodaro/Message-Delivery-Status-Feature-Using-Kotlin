@@ -90,8 +90,8 @@ class ChatActivity : AppCompatActivity() {
     private fun setupPusher() {
 
         val options = PusherOptions()
-        options.setCluster("eu")
-        val pusher = Pusher("9117088b176802bda36f", options)
+        options.setCluster("PUSHER_APP_CLUSTER")
+        val pusher = Pusher("PUSHER_APP_KEY", options)
         val channel = pusher.subscribe("my-channel")
 
         channel.bind("new_message") { channelName, eventName, data ->
